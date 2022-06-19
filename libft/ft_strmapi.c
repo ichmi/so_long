@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/04/14 11:02:49 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/04/27 12:00:28 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_map	map;
-	t_data	data;
+	char			*buff;
+	unsigned int	i;
 
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
-	return (0);
+	buff = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!buff)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		buff[i] = f(i, s[i]);
+		i++;
+	}
+	return (buff);
 }

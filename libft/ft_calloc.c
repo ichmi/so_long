@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/04/07 16:00:21 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/04/27 14:29:42 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	t_map	map;
-	t_data	data;
+	void	*p;
 
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
-	return (0);
+	p = malloc(nmemb * size);
+	if (!p)
+		return (NULL);
+	ft_bzero(p, nmemb * size);
+	return (p);
 }

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/04/06 09:21:49 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/04/27 11:51:32 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	t_map	map;
-	t_data	data;
+	size_t	i;
 
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
-	return (0);
+	if (size == 0)
+		return (ft_strlen(src));
+	i = ft_strlen(dest);
+	if (size < i)
+		return (ft_strlen(src) + size);
+	while (i < (size - 1) && *src)
+		dest[i++] = *(src++);
+	dest[i] = '\0';
+	return (ft_strlen(src) + i);
 }

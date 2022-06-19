@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/04/04 08:23:10 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/04/27 14:30:08 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+int	ft_isascii(int c)
 {
-	t_map	map;
-	t_data	data;
-
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
+	if (c >= 0 && c <= 127)
+		return (1);
 	return (0);
 }

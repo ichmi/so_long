@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/04/18 21:02:35 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/04/25 20:57:02 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+t_list	*ft_lstnew(void *content)
 {
-	t_map	map;
-	t_data	data;
+	t_list	*node;
 
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
-	return (0);
+	node = (t_list *)malloc(sizeof(*node));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/04/04 15:54:59 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/04/27 11:29:36 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	t_map	map;
-	t_data	data;
+	unsigned char	*pd;
+	unsigned char	*ps;
 
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
-	return (0);
+	pd = dest;
+	ps = (unsigned char *)src;
+	while (n--)
+		*pd++ = *ps++;
+	return (dest);
 }

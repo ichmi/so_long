@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/04/11 14:08:06 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/05/27 20:50:03 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	t_map	map;
-	t_data	data;
+	char	*buff;
+	size_t	size;
 
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
-	return (0);
+	size = ft_strlen(s1) + ft_strlen(s2);
+	buff = (char *)malloc(size + 1);
+	if (!buff)
+		return (NULL);
+	ft_strlcpy(buff, s1, -1);
+	ft_strlcat(buff, s2, -1);
+	return (buff);
 }

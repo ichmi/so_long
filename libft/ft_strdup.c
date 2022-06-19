@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/04/07 15:28:36 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/06/18 20:26:12 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+char	*ft_strdup(const char *s)
 {
-	t_map	map;
-	t_data	data;
+	char	*buff;
+	char	*pb;
 
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
-	return (0);
+	buff = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!buff)
+		return (NULL);
+	pb = buff;
+	while (*s)
+		*buff++ = *(char *)s++;
+	*buff = '\0';
+	return (pb);
 }

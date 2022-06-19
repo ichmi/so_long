@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/04/04 11:16:09 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/04/27 14:17:48 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_map	map;
-	t_data	data;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
-	return (0);
+	if (n == 0)
+		return (0);
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	while (*p1 == *p2 && *p1 && *p2 && --n)
+	{
+		p1++;
+		p2++;
+	}
+	return (*p1 - *p2);
 }

@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/19 15:14:41 by frosa-ma         ###   ########.fr       */
+/*   Created: 2022/06/19 03:39:09 by frosa-ma          #+#    #+#             */
+/*   Updated: 2022/06/19 06:20:37 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
+#include "game.h"
+#include <stdio.h>
 
-int	main(int ac, char **av)
+void	display_matrix(t_map *map)
 {
-	t_map	map;
-	t_data	data;
-
-	init_map(av[1], &map);
-
-
-	// ft_init_game(&data);
-	return (0);
+	int	i;
+	int	j;
+	
+	i = 0;
+	while (map->matrix[i])
+	{
+		j = 0;
+		while (map->matrix[i][j])
+		{
+			printf("%c", map.matrix[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
 }
