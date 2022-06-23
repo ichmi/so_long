@@ -6,34 +6,73 @@
 #    By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 20:48:54 by frosa-ma          #+#    #+#              #
-#    Updated: 2022/06/19 16:25:31 by frosa-ma         ###   ########.fr        #
+#    Updated: 2022/06/22 21:59:45 by frosa-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.PHONY	= all bonus clean fclean re
 
 NAME	= so_long
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
+HEADER	= so_long.h
+SRCS	= \
+	main.c \
+	map.c \
+	validate_sides.c \
+	validate_attributes.c \
+	init.c \
+	events.c \
+	render.c \
+	controls.c \
+	movement.c \
+	ft_alt_gnl.c \
+	cleanup.c
 
-SRCS	= map.c validate_sides.c validate_attributes.c
-OBJS	= ${SRCS:.c=.o}
+OBJSDIR	= obj
+OBJS	= $(addprefix ${OBJSDIR}/, ${SRCS:%.c=%.o})
 
-FT		= -Ilibft -Llibft -lft
-X		= -Imlx -Lmlx -lXext -lX11
-OBJS	= ${SRCS:.c=.o}
+LIBFT	= libft.a
+MLX		= mlx.a
+IFT		= -Ilibft -Llibft -lft
+IMLX	= -Imlx -Lmlx -lmlx -lXext -lX11
 
 all: ${NAME}
 
-# TODO: add CFLAGS eventually
-${NAME}: ${OBJS}
-	${CC} main.c ${OBJS} ${FT} ${X} -o ${NAME}
+${NAME}: ${OBJSDIR} ${OBJS}
+	${CC} ${CFLAGS} ${OBJS} ${IFT} ${IMLX} -o $@
 
-%.o: %.c
-	${CC} ${FT} -c $^
+${OBJSDIR}:
+	mkdir -p $@
+
+${OBJS}: | ${LIBFT} ${MLX}
+
+${OBJSDIR}/%.o: %.c ${Header} Makefile
+	${CC} ${CFLAGS} ${IFT} ${IMLX} -c $< -o $@
+
+${LIBFT}: | libft
+	${MAKE} -C libft/
+
+${MLX}: | mlx
+	${MAKE} -C mlx/
+
+libft:
+	git clone https://github.com/ichmi/libft.git
+
+mlx:
+	git clone https://github.com/42Paris/minilibx-linux.git mlx
+
+leak:
+	valgrind --leak-check=full --show-leak-kinds=all ./${NAME} m1.ber
+
+bonus: all
 
 clean:
-	rm -f *.o
+	${MAKE} clean -C libft
+	${MAKE} clean -C mlx
+	rm -rf ${OBJSDIR}
 
 fclean: clean
-	rm -f so_long
+	rm -rf ${NAME}
 
 re: fclean all
