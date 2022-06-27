@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 21:50:09 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/22 20:23:29 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/27 00:39:22 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	init_sprites(t_game *game)
 	game->img.floor = get_sprite("assets/floor.xpm", id);
 	game->img.wall = get_sprite("assets/wall.xpm", id);
 	game->img.collect = get_sprite("assets/fruit.xpm", id);
-	game->img.char_r1 = get_sprite("assets/char_r1.xpm", id);
+	game->img.char_r1 = get_sprite("assets/r1.xpm", id);
 	game->img.exit_open = get_sprite("assets/exit4.xpm", id);
 }
 
@@ -63,7 +63,7 @@ static void	init_window(t_game *game)
 void	init_game(t_game *game)
 {
 	init_window(game);
-	ft_printf("\rMoves: %d", game->moves);
+	ft_printf("\r\033[0;31mMoves:\033[0;33m %d\033[0m", game->moves);
 	init_sprites(game);
 	set_game_objective(game);
 	mlx_loop_hook(game->id, loop_hook, game);

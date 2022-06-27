@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 22:01:09 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/21 02:52:49 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/27 00:27:56 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 static void	insert_sprite(char *sprite, t_game *game, int x, int y)
 {
-	mlx_put_image_to_window(game->id, game->window, sprite, x * 64, y * 64);
+	void	*id;
+	void	*window;
+
+	x *= SIZE;
+	y *= SIZE;
+	id = game->id;
+	window = game->window;
+	mlx_put_image_to_window(id, window, sprite, x, y);
 }
 
 void	render_map(t_game *game)

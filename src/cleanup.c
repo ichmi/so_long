@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 03:00:50 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/22 21:09:23 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/27 00:31:58 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	clean_before_exit(t_game *game)
 	free_matrix(game);
 	free_images(game);
 	free_window(game);
+	ft_printf("\n");
 	exit(0);
 	return (0);
 }
