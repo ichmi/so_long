@@ -13,8 +13,8 @@
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
 
-# include "libft.h"
-# include <mlx.h>
+# include "../libft/libft.h"
+# include "../mlx/mlx.h"
 # include <stdio.h>
 # include <time.h>
 # include <X11/X.h>

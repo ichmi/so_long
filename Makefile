@@ -13,7 +13,7 @@
 .PHONY	= all bonus clean fclean re
 
 NAME		= so_long
-CC			= gcc
+CC			= clang
 CFLAGS		= -Wall -Wextra -Werror
 HEADER		= so_long.h
 
@@ -75,10 +75,10 @@ ${OBJS}: | ${LIBFT} ${MLX}
 ${B_OBJS}: | ${LIBFT} ${MLX}
 
 ${OBJSDIR}/%.o: src/%.c src/so_long.h Makefile
-	${CC} ${CFLAGS} ${IFT} ${IMLX} -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@
 
 ${OBJSDIR}/%.o: bonus/%.c bonus/so_long_bonus.h Makefile
-	${CC} ${CFLAGS} ${IFT} ${IMLX} -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@
 
 ${LIBFT}: | libft
 	${MAKE} -C libft/
