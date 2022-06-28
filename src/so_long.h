@@ -6,15 +6,15 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 15:06:22 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/28 04:57:58 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:48:50 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "libft.h"
-# include <mlx.h>
+# include "../libft/libft.h"
+# include "../mlx/mlx.h"
 
 enum	e_alter
 {
