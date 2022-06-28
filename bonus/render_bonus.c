@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 22:01:09 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/26 23:33:51 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/27 23:44:46 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ static void	update_score(t_game *game)
 
 	s = ft_itoa(game->moves);
 	mlx_put_image_to_window(game->id, game->window, game->img.score, 0, 0);
-	mlx_string_put(game->id, game->window, 18, 50, 0x000000, s);
+	if (game->size == 32)
+		mlx_string_put(game->id, game->window, 8, 20, 0xffff00, s);
+	else
+		mlx_string_put(game->id, game->window, 18, 50, 0x000000, s);
 	free(s);
 }
 
@@ -27,8 +30,8 @@ static void	insert_map_sprite(t_game *game, char ch, int x, int y)
 	void	*id;
 	void	*window;
 
-	x *= SIZE;
-	y *= SIZE;
+	x *= game->size;
+	y *= game->size;
 	id = game->id;
 	window = game->window;
 	if (ch == '1')

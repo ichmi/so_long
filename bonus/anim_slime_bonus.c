@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 23:30:37 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/26 23:33:47 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:44:41 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	__right_a(t_game *game, int x, int y)
 	void	*id;
 	void	*window;
 
-	x *= SIZE;
-	y *= SIZE;
+	x *= game->size;
+	y *= game->size;
 	id = game->id;
 	window = game->window;
 	if (game->timer >= 0 && game->timer < 2)
@@ -42,8 +42,8 @@ static void	__left_a(t_game *game, int x, int y)
 	void	*id;
 	void	*window;
 
-	x *= SIZE;
-	y *= SIZE;
+	x *= game->size;
+	y *= game->size;
 	id = game->id;
 	window = game->window;
 	if (game->timer >= 0 && game->timer < 2)

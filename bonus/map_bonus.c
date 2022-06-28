@@ -6,13 +6,13 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 15:02:07 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/22 23:03:10 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/27 23:29:45 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	get_map_dimension(t_map *map)
+static void	get_map_dimension(t_map *map)
 {
 	int	i;
 	int	j;
@@ -68,7 +68,7 @@ static int	get_fd(char *filename, char *buffer)
 	return (fd);
 }
 
-void	init_matrix(char *filename, char *buffer, t_map *map)
+void	init_matrix(char *filename, char *buffer, t_game *game)
 {
 	char	*pb;
 	char	*row;
@@ -90,18 +90,18 @@ void	init_matrix(char *filename, char *buffer, t_map *map)
 		free(row);
 		free(pb);
 	}
-	map->matrix = ft_split(buffer, '\n');
+	game->map.matrix = ft_split(buffer, '\n');
 	free(buffer);
 	close(fd);
 }
 
-void	init_map(char *filename, t_map *map)
+void	init_map(char *filename, t_game *game)
 {
 	char	*buffer;
 
 	buffer = ft_strdup("");
-	init_matrix(filename, buffer, map);
-	get_map_dimension(map);
-	validate_map_attributes(map);
-	validate_map_sides(map);
+	init_matrix(filename, buffer, game);
+	get_map_dimension(&game->map);
+	validate_map_attributes(&game->map);
+	validate_map_sides(&game->map);
 }

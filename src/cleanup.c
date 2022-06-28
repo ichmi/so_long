@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 03:00:50 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/27 00:31:58 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:49:41 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	free_images(t_game *game)
 	mlx_destroy_image(id, game->img.floor);
 	mlx_destroy_image(id, game->img.wall);
 	mlx_destroy_image(id, game->img.collect);
-	mlx_destroy_image(id, game->img.char_r1);
+	mlx_destroy_image(id, game->img.r1);
 	mlx_destroy_image(id, game->img.exit_open);
 }
 
@@ -38,10 +38,7 @@ static void	free_matrix(t_game *game)
 
 	i = 0;
 	while (i < game->map.n_row)
-	{
-		free(game->map.matrix[i]);
-		i++;
-	}
+		free(game->map.matrix[i++]);
 	free(game->map.matrix);
 }
 

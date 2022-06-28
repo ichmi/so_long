@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 15:06:22 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/22 21:58:51 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:57:58 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "libft.h"
 # include <mlx.h>
-
-# define SIZE 64
 
 enum	e_alter
 {
@@ -30,7 +28,7 @@ enum	e_alter
 typedef struct s_img
 {
 	void	*exit_open;
-	void	*char_r1;
+	void	*r1;
 	void	*floor;
 	void	*wall;
 	void	*collect;
@@ -58,9 +56,10 @@ typedef struct s_game
 	int		total_fruits;
 	int		moves;
 	int		end;
+	int		size;
 }			t_game;
 
-void	init_map(char *filename, t_map *map);
+void	init_map(char *filename, t_game *game);
 void	validate_map_sides(t_map *map);
 void	validate_map_attributes(t_map *map);
 void	init_game(t_game *game);

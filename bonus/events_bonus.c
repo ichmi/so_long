@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 21:57:34 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/26 20:22:39 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:58:28 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	key_hook(int key, t_game *game)
 void	init_event_handler(t_game *game)
 {
 	mlx_loop_hook(game->id, render_map, game);
-	mlx_key_hook(game->window, key_hook, game);
+	mlx_hook(game->window, KeyPress, KeyPressMask, key_hook, game);
 	mlx_hook(game->window, 17, 0, clean_before_exit, game);
 	mlx_loop(game->id);
 }

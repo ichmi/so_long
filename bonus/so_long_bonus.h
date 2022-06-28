@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 15:06:22 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/27 00:08:55 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:58:38 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <time.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
-
-# define SIZE 64
 
 enum	e_alter
 {
@@ -74,9 +72,10 @@ typedef struct s_game
 	int		moves;
 	int		end;
 	int		timer;
+	int		size;
 }			t_game;
 
-void	init_map(char *filename, t_map *map);
+void	init_map(char *filename, t_game *game);
 void	validate_map_sides(t_map *map);
 void	validate_map_attributes(t_map *map);
 void	init_game(t_game *game);
@@ -93,9 +92,12 @@ void	player_animate(t_game *game, int x, int y);
 void	exit_animate(t_game *game, int x, int y);
 void	init_event_handler(t_game *game);
 void	set_game_objective(t_game *game);
-char	*get_xpm_file(char *filename, int n);
+void	*get_sprite(char *pathname, t_game *game);
+char	*get_xpm_file(char *filename, t_game *game, int n);
 int		validate_slime_next_move(int n, t_game *game);
 int		is_valid_move(t_game *game, char dir);
 void	slime_animate(t_game *game, int x, int y);
+void	init_32px_xpm(t_game *game);
+void	init_64px_xpm(t_game *game);
 
 #endif

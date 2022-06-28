@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 18:20:18 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/25 23:58:06 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:33:05 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static void	init_game_attr(t_game *game)
 	game->map.n_col = 0;
 	game->map.found_slime = 0;
 	game->timer = 0;
+	game->size = 64;
 }
 
 static int	is_valid_file_extension(char *s)
@@ -56,7 +57,7 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	init_game_attr(&game);
-	init_map(av[1], &game.map);
+	init_map(av[1], &game);
 	init_game(&game);
 	return (0);
 }

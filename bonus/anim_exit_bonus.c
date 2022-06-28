@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 15:04:08 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/06/25 15:16:00 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:45:20 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	exit_animate(t_game *game, int x, int y)
 	void	*id;
 	void	*window;
 
-	x *= SIZE;
-	y *= SIZE;
+	x *= game->size;
+	y *= game->size;
 	id = game->id;
 	window = game->window;
 	if (game->end)
