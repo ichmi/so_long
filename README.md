@@ -1,5 +1,5 @@
 # **so_long | 42sp**
-![Game sample](assets/exemple.gif)
+![Game sample](assets/exemple2.gif)
 
 ## Introduction
 This project is a very small 2D game. Its purpose is to make you work with textures, sprites, and some other very basic gameplay elements. 
@@ -12,6 +12,18 @@ The executable `so_long`/`so_long_bonus` will receive a `.ber` filetype map as t
 - There must be at least one collectable (`C`), one exit, and one player on the map.
 - The map must be surrounded by walls (`1`'s).
 - Only the following characters are valid: "`01CPE`" where `0` indicates the floor area, `1` walls, `C` collectables, `P` Player, and `E` an exit. (except if we add enemies as bonus, which we can use any caracter in order to represent it. Im using `S` to indicate slimes and `.` to indicate the score area).
+
+You can create your own map (just remember the rules to create a valid map described above). For exemple, here is an valid map and its demo:
+```bash
+# my_map.ber
+1111111111111
+10010000000C1
+1000011111001
+1P0011E0000S1
+1111111111111
+```
+![Game sample](assets/exemple1.gif)
+
 
 ## How it works
 To handle the graphic part of the project, we are using a library called **[MinilibX](https://github.com/42Paris/minilibx-linux)** (A simple X-Window programming API, designed for students, suitable for X-beginners). Despite its leak issues and limitations, is pretty fun to work with.
@@ -62,4 +74,5 @@ This has been my favorite project so far, was pretty fun to create a basic compu
 
 Ooh, and I made all sprites avaiable in the game as well. ^-^
 
+![Game sample](assets/42exemple.gif)
 👨🏻‍🚀 "_thanks for all the fish!_" 🐟
