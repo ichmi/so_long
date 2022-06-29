@@ -1,4 +1,4 @@
-# **so_long | 42sp**
+# 🦊 **so_long | 42sp**
 ![Game sample](assets/exemple.gif)
 
 ## Introduction
@@ -58,7 +58,7 @@ make bonus
 ```
 
 ### Summary
-This has been my favorite project so far, was pretty fun to create a basic computer graphics project. It helped me to improve window management, event handling, colors, textures, along with other skills.
+This has been my favorite project so far, was pretty fun to create a basic computer graphics project using C language only. It helped me to improve window management, event handling, colors, textures, along with other skills.
 
 Ooh, and I made all sprites avaiable in the game as well. ^-^
 
