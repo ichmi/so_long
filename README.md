@@ -75,4 +75,5 @@ This has been my favorite project so far, was pretty fun to create a basic compu
 Ooh, and I made all sprites avaiable in the game as well. ^-^
 
 ![Game sample](assets/42exemple.gif)
+
 👨🏻‍🚀 "_thanks for all the fish!_" 🐟
