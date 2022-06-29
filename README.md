@@ -1,4 +1,4 @@
-# **so_long | 42sp**
+# **so_long | 42sp** 🦊 
 ![Game sample](assets/exemple2.gif)
 
 ## Introduction
@@ -9,9 +9,9 @@ In this project, the goal is for the player to collect all the collectibles on t
 ## Rules
 The executable `so_long`/`so_long_bonus` will receive a `.ber` filetype map as the only argument, otherwise, the game must exit with a `Error\n` message. Also, if any of the following checks fail, the game must end with an `Error\n` followed by a custom message:
 - The map must be rectangular.
-- There must be at least one collectable (`C`), one exit, and one player on the map.
-- The map must be surrounded by walls (`1`'s).
-- Only the following characters are valid: "`01CPE`" where `0` indicates the floor area, `1` walls, `C` collectables, `P` Player, and `E` an exit. (except if we add enemies as bonus, which we can use any caracter in order to represent it. Im using `S` to indicate slimes and `.` to indicate the score area).
+- There must be at least one collectable `C`, one exit `E`, and one player `P` on the map.
+- The map must be surrounded by walls `1`'s.
+- Only the following characters are valid: "`01CPE`" where `0` indicates the floor area, `1` walls, `C` collectables, `P` Player, and `E` an exit. (except if we add enemies as bonus, which we can use any character to represent it. I'm using `S` that indicate slimes and `.` to indicate the score area).
 
 You can create your own map (just remember the rules to create a valid map described above). For exemple, here is an valid map and its demo:
 ```bash
@@ -70,7 +70,7 @@ make bonus
 ```
 
 ### Summary
-This has been my favorite project so far, was pretty fun to create a basic computer graphics project. It helped me to improve window management, event handling, colors, textures, along with other skills.
+This has been my favorite project so far, was pretty fun to create a basic computer graphics project using C language only. It helped me to improve window management, event handling, colors, textures, along with other skills.
 
 Ooh, and I made all sprites avaiable in the game as well. ^-^
 
