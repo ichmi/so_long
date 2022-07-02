@@ -11,7 +11,7 @@ The executable `so_long`/`so_long_bonus` will receive a `.ber` filetype map as t
 - The map must be rectangular.
 - There must be at least one collectable `C`, one exit `E`, and one player `P` on the map.
 - The map must be surrounded by walls `1`'s.
-- Only the following characters are valid: "`01CPE`" where `0` indicates the floor area, `1` walls, `C` collectables, `P` Player, and `E` an exit. (except if we add enemies as bonus, which we can use any character to represent it. I'm using `S` that indicate slimes and `.` to indicate the score area).
+- Only the following characters are valid: "`01CPE`" where `0` indicates the floor area, `1` walls, `C` collectables, `P` Player, and `E` an exit. (except if we add enemies as bonus, which we can use any character to represent it. I'm using `S` that indicate slimes).
 
 You can create your own map (just remember the rules to create a valid map described above). For exemple, here is an valid map and its demo:
 ```bash
